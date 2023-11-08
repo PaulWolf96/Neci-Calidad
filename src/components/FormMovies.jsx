@@ -1,16 +1,10 @@
 const FormMovies = () => {
-    return (
-        <form>
-            <label htmlFor="searchMovie">Buscar una Película: </label>
-            <input type="text" id="searchMovie" placeholder="Ingrese una Película" />
-            <button type='submit'>Buscar</button>
-
-            <br />
-
-            
-
-        </form>
-    );
+  return (
+    <form>
+      <input type="text" className="" placeholder="Buscar..." />
+      <br />
+    </form>
+  );
 }
 
 export default FormMovies;

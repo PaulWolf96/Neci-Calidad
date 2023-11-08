@@ -1,0 +1,45 @@
+h1 {
+  background-color: grey;
+  color: aquamarine;
+}
+ul {
+  display: inline-flex;
+}
+
+.div-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.li-gender {
+  list-style: none;
+}
+
+.a-gender {
+  text-decoration: none;
+  background-color: black;
+  font-size: 12.5px;
+  color: white;
+  padding: .3rem .4rem; 
+  margin: 2.5px;
+  border-radius: 5px;
+}
+
+.a-gender:hover {
+  opacity: 0.5;
+}
+
+.button-menu {
+  background-color: black;
+  color: white;
+  font-size: 12.5px;
+  padding: .3rem .4rem; 
+  margin: 2.5px;
+  border-radius: 5px;
+  border: none;
+}
+
+.button-menu:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
