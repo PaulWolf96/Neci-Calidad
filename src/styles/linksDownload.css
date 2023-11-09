@@ -1,0 +1,50 @@
+* {
+  font-family: verdana, sans-serif;
+}
+h5 {
+  padding-bottom: .4rem;
+  
+}
+
+.li-links-download {
+  list-style-type: none;
+}
+.ul-links-download {
+  display: block;
+}
+.container-links-download {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid grey;
+  height: 428px;
+  padding: 15px;
+}
+.ul-links-download .li-links-download button {
+  padding: .2rem .5rem;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #177bbd;
+  margin-bottom: .4rem;
+  color: #177bbd;
+  width: 101px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ul-links-download .li-links-download button:hover {
+  color: white;
+  background-color: #177bbd;
+  cursor: pointer;
+}
+.section-online {
+  width: 50%;
+}
+
+.section-download {
+  width: 50%;
+}
+
+.p-links {
+  margin-bottom: .4rem;
+  font-size: 13px;
+}

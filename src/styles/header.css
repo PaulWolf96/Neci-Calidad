@@ -1,9 +1,29 @@
-h1 {
-  background-color: grey;
-  color: aquamarine;
+* {
+  font-family: Verdana, sans-serif;
 }
+
 ul {
   display: inline-flex;
+}
+
+.div-input input {
+  border-radius: 5px;
+  border: 1px solid #d9d9d9;
+  height: 24px;
+  width: 210px;
+  padding: 0 21px;
+  font-size: 12px;
+  font-weight: 400;
+  outline: none;
+  margin-top: 4px;
+}
+
+.div-input {
+  width: 210px;
+  height: 24px;
+  text-align: center;
+  display: inline-block;
+  margin-left: 20px;
 }
 
 .div-header {
@@ -13,6 +33,7 @@ ul {
 
 .li-gender {
   list-style: none;
+  height: 27px;
 }
 
 .a-gender {

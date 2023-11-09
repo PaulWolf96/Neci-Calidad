@@ -1,7 +1,7 @@
 import '../styles/header.css';
 import { HiMenu } from 'react-icons/hi';
 
-const NavGender = () => {
+const Nav = () => {
   return (
     <nav>
       <ul>
@@ -37,8 +37,12 @@ const NavGender = () => {
         </li>
       </ul>
       <button className='button-menu'><HiMenu />Menú</button>
+      <div className='div-input'>
+        <input type="text" placeholder="Buscar..." />
+        <br />
+      </div>
     </nav>
   );
 }
 
-export default NavGender;
+export default Nav;

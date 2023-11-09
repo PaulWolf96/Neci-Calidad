@@ -1,14 +1,12 @@
-import NavGender from './NavGender';
-import FormMovies from './FormMovies';
+import Nav from './Nav';
 import '../styles/header.css';
 
 const Header = () => {
 	return (
 		<header>
-			<h1>Neci-Calidad</h1>
+			<img src="https://cinecalidad.com.mx/wp-content/themes/cinecalidad-react/assets/build/static/media/logo.ae7f2b17ae0afe91f86d8a37477fd75b.svg" alt="Logo Neci Calidad" />
 			<div className='div-header'>
-				<NavGender />
-				<FormMovies />
+				<Nav />
 			</div>
 		</header>
 	);

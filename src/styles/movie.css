@@ -1,0 +1,95 @@
+* {
+  font-family: Verdana, sans-serif;
+}
+
+h3 {
+  padding: .7rem 0;
+}
+
+figcaption {
+  display: inline-block;
+  position: relative;
+  left: 100px;
+  bottom: 60px;
+}
+
+figcaption button {
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: #0ecbb7;
+  font-weight: 600;
+  font-family: Arial;
+  width: 220px;
+  height: 35px;
+  font-size: 18px;
+}
+
+figcaption button:hover {
+  cursor: pointer;
+}
+
+span {
+  padding: 5px 0;
+}
+
+strong {
+  padding-right: 15px;
+}
+
+.container-movie {
+  display: flex;
+}
+
+.section-img-movie {
+  display: flex;
+}
+
+.section-info-movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 12px;
+  padding-left: 2rem;
+}
+.div-share-movie {
+  display: flex;
+}
+
+.div-share-logos {
+  display: flex;
+  width: 120px;
+  justify-content: space-around;
+}
+.div-share-logos a img:hover {
+  opacity: 0.9;
+} 
+
+.div-share-icon {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 120px;
+}
+
+.div-share-icon span {
+  font-family: Arial;
+}
+
+.button-share {
+  display: inline-flex;
+  align-items: center;
+  border: none; 
+  background-color: white;
+  color: grey;
+}
+
+.button-share:hover {
+  cursor: pointer;
+  color: #0ecbb7;
+}
+
+.paragraph-synopsis {
+  line-height: 1.5rem;
+  font-size: 12px;
+}
