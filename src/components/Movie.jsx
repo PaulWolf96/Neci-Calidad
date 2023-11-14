@@ -2,11 +2,16 @@ import '../styles/movie.css';
 import LogoInstagram from '../img/instagramLogo.png';
 import LogoWp from '../img/whatsappLogo.png';
 import { BsFillShareFill } from 'react-icons/bs';
+import { useContext } from 'react';
+import MovieContext from '../context/MovieContext';
 
 const Movie = () => {
+
+  const {infoMovie} = useContext(MovieContext);
+
   return (
     <>
-      <h3>Venom</h3>
+      <h3> {infoMovie.title} </h3>
       <div className="container-movie">
         <section className="section-img-movie">
           <figure>

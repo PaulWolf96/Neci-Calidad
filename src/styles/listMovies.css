@@ -1,0 +1,26 @@
+main {
+  width: 73%;
+}
+
+.div-list-movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.div-card-movie {
+  width: 30%;
+  margin: 8px;
+  text-align: center;
+}
+
+.div-card-movie img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.div-card-movie img:hover {
+  cursor: pointer;
+}
