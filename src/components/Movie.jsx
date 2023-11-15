@@ -9,6 +9,9 @@ const Movie = () => {
 
   const {infoMovie} = useContext(MovieContext);
 
+  
+
+
   return (
     <>
       <h3> {infoMovie.title} </h3>

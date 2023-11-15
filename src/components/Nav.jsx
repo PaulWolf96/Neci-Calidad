@@ -1,12 +1,12 @@
 import '../styles/header.css';
 import { HiMenu } from 'react-icons/hi';
 import { useContext } from 'react';
-import StateContext from '../context/StateContext';
+import ApiContext from '../context/ApiContext';
 
 
 const Nav = () => {
 
-  const {dispatch} = useContext(StateContext);
+  const {dispatch} = useContext(ApiContext);
 
   return (
     <nav>

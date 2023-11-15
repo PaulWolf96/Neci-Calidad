@@ -1,6 +1,6 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
 
-const StateContext = createContext();
+const ApiContext = createContext();
 
 const API_KEY = '52a625a829f55a42813acab1b8e140d2';
 
@@ -10,9 +10,7 @@ const initialState =  {
 } 
 
 const reducer = (state, action) => {
-
   //const genres = [28, 80, 35, 878, 12, 16, 27, 53, 10749, 10751];
-
   switch (action.type) {
     case 'ACTION': 
       return (
@@ -90,15 +88,29 @@ const reducer = (state, action) => {
 }
 
 
-export const StateProvider = ({ children }) => {
+
+export const ApiProvider = ({ children }) => {
+
+  const [listMovies, setListMovies] = useState([]);
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const fetchData = async () => {
+    try {
+      const response = await fetch(state.endpointApi);
+      const data = await response.json();
+      await setListMovies(data.results);
+    } catch (error) {
+      console.error('Error fetching data: ', error);
+    }
+  };
+
+
   return (
-    <StateContext.Provider value={{state, dispatch}}>
+    <ApiContext.Provider value={{state, dispatch, listMovies, fetchData}}>
       {children}     
-    </StateContext.Provider>
+    </ApiContext.Provider>
   )
 }
 
 
-export default StateContext;
+export default ApiContext;

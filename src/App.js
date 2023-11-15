@@ -1,15 +1,15 @@
 import AppRoutes from "./router/Routes";
 import './styles/app.css';
-import { StateProvider } from "./context/StateContext";
+import { ApiProvider } from "./context/ApiContext";
 import { MovieProvider } from "./context/MovieContext";
 
 function App() {
   return (
-    <StateProvider>
+    <ApiProvider>
       <MovieProvider>
         <AppRoutes />
       </MovieProvider>
-    </StateProvider>
+    </ApiProvider>
   );
 }
 
