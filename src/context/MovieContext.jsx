@@ -5,7 +5,7 @@ const MovieContext = createContext();
 
 
 export const MovieProvider = ({children}) => {
-  const [infoMovie, setInfoMovie] = useState({});
+  const [infoMovie, setInfoMovie] = useState();
 
   
 

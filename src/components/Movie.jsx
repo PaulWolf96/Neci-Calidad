@@ -2,14 +2,35 @@ import '../styles/movie.css';
 import LogoInstagram from '../img/instagramLogo.png';
 import LogoWp from '../img/whatsappLogo.png';
 import { BsFillShareFill } from 'react-icons/bs';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import MovieContext from '../context/MovieContext';
 
 const Movie = () => {
 
   const {infoMovie} = useContext(MovieContext);
+  const [castMovie, setCastMovie] = useState({
+    director: '',
+    actors: []
+  });
 
-  
+  // EndPoint para traer los géneros de las películas
+  // https://api.themoviedb.org/3/movie/299054?api_key=52a625a829f55a42813acab1b8e140d2
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${infoMovie.id}/credits?api_key=52a625a829f55a42813acab1b8e140d2`);
+        const data = await response.json();
+
+        const director = data.crew.find(crew => crew.job === 'Director');
+        setCastMovie({...castMovie, director: director ? director.name : 'No Disponible' });
+      } catch (error) {
+        console.error('Error fetching data: ', error);
+      }
+    };
+
+    fetchData();
+  }, [])
 
 
   return (
@@ -26,18 +47,18 @@ const Movie = () => {
         </section>
 
         <section className="section-info-movie">
-          <p className="paragraph-synopsis">El periodista Eddie Brock intenta desenmascarar al genio científico Carlton Drake, el célebre fundador de la Fundación Vida. Mientras investiga uno de los experimentos de Drake, Brock establece una simbiosis con un ente alienígena que le ofrece superpoderes, pero el ser se apodera de su personalidad y lo vuelve perverso.</p>
+          <p className="paragraph-synopsis"> {infoMovie.overview} </p>
           <br />
           <span>
             <strong>Titulos:</strong>
-            Venom
+            {infoMovie.original_title}
           </span>
           <span>
             <strong>TMDB:</strong>
           </span>
           <span>
             <strong>Género:</strong>
-            Accion, Ciencia Ficción
+            {}
           </span>
           <span>
             <strong>Audio:</strong>
@@ -49,7 +70,7 @@ const Movie = () => {
           </span>
           <span>
             <strong>Director:</strong>
-            Ruben Fleischer, Andy Serkis
+            {castMovie.director}
           </span>
           <span>
             <strong>Elenco:</strong>
