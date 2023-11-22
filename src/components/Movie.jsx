@@ -12,17 +12,20 @@ const Movie = () => {
     director: '',
     actors: []
   });
+  const [genres, setGenres] = useState();
 
-  // EndPoint para traer los géneros de las películas
-  // https://api.themoviedb.org/3/movie/299054?api_key=52a625a829f55a42813acab1b8e140d2
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${infoMovie.id}/credits?api_key=52a625a829f55a42813acab1b8e140d2`);
-        const data = await response.json();
-
-        const director = data.crew.find(crew => crew.job === 'Director');
+        const dataDirector = await response.json();
+        const director = dataDirector.crew.find(crew => crew.job === 'Director');
+        const res = await fetch(`https://api.themoviedb.org/3/movie/${infoMovie.id}?api_key=52a625a829f55a42813acab1b8e140d2`);
+        const dataElenco = await res.json();
+        const genres = dataElenco.genres.map(genre => genre.name);
+        setGenres(genres ? genres.join(', ') : 'No Disponible');
+        console.log(genres);
         setCastMovie({...castMovie, director: director ? director.name : 'No Disponible' });
       } catch (error) {
         console.error('Error fetching data: ', error);
@@ -58,7 +61,7 @@ const Movie = () => {
           </span>
           <span>
             <strong>Género:</strong>
-            {}
+            {genres}
           </span>
           <span>
             <strong>Audio:</strong>
