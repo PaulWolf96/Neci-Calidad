@@ -10,7 +10,7 @@ const Movie = () => {
   const {infoMovie} = useContext(MovieContext);
   const [castMovie, setCastMovie] = useState({
     director: '',
-    actors: []
+    actors: ''
   });
   const [genres, setGenres] = useState();
 
@@ -19,14 +19,17 @@ const Movie = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${infoMovie.id}/credits?api_key=52a625a829f55a42813acab1b8e140d2`);
-        const dataDirector = await response.json();
-        const director = dataDirector.crew.find(crew => crew.job === 'Director');
+        const dataCast = await response.json();
+        const director = dataCast.crew.find(crew => crew.job === 'Director');
+        const cast = dataCast.cast.slice(0, 6).map(actor => actor.name);
         const res = await fetch(`https://api.themoviedb.org/3/movie/${infoMovie.id}?api_key=52a625a829f55a42813acab1b8e140d2`);
-        const dataElenco = await res.json();
-        const genres = dataElenco.genres.map(genre => genre.name);
+        const dataGenres = await res.json();
+        const genres = dataGenres.genres.map(genre => genre.name);
         setGenres(genres ? genres.join(', ') : 'No Disponible');
-        console.log(genres);
-        setCastMovie({...castMovie, director: director ? director.name : 'No Disponible' });
+        setCastMovie({
+          director: director ? director.name : 'No Disponible', 
+          actors: cast ? cast.join(', ') : 'No Disponible'
+        });
       } catch (error) {
         console.error('Error fetching data: ', error);
       }
@@ -42,7 +45,7 @@ const Movie = () => {
       <div className="container-movie">
         <section className="section-img-movie">
           <figure>
-            <img src="https://www.smashmexico.com.mx/wp-content/uploads/sites/2/2018/02/09103129/first-movie-poster-released-for-venom-the-trailer-is-coming-tomorrow11-e1518193898324.jpg" alt="Portada Pelicula" width="405px" height="600px" />
+            <img src={`https://image.tmdb.org/t/p/w200${infoMovie.poster_path}`} alt="Portada Pelicula" width="405px" height="600px" />
             <figcaption>
               <button>Ver Trailer</button>
             </figcaption>
@@ -77,7 +80,7 @@ const Movie = () => {
           </span>
           <span>
             <strong>Elenco:</strong>
-            Tom Hardy, Michelle Williams, Riz Ahmed, Reid Scott, Scott Haze, Jenny Slate
+            {castMovie.actors}
           </span>
           <br />
           <div className='div-share-movie'>
