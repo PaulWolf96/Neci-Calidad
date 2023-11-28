@@ -9,7 +9,7 @@ const Header = () => {
 				<p className='p-header'>Películas en excelente calidad Full HD. <br />
 					Audio latino e inglés online. <br />
 					1 enlace, 1 clic.</p>
-				<img className='logo-neci' src={LogoNeci} width='158px' alt="Logo Neci Calidad" />
+					<a href="/"><img className='logo-neci' src={LogoNeci} width='158px' alt="Logo Neci Calidad" /></a>
 				<a href="" className='a-header'>Ir a Cinecalidad España</a>
 			</div>
 			<div className='div-nav'>

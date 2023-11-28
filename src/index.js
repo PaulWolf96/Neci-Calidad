@@ -4,6 +4,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { MovieProvider } from './context/MovieContext';
 import { ApiProvider } from './context/ApiContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 
 
@@ -12,7 +13,9 @@ root.render(
   <BrowserRouter>
     <ApiProvider>
       <MovieProvider>
-        <App />
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
       </MovieProvider>
     </ApiProvider>
   </BrowserRouter>

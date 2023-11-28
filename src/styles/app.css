@@ -5,9 +5,17 @@
   font-family: Verdana, sans-serif;
 }
 
+
 .container {
   width: 77%;
   margin: 0 auto;
+}
+
+.container-dark {
+  width: 77%;
+  margin: 0 auto;
+  background-color: rgb(63, 55, 55);
+  color: white;
 }
 
 .div-main-aside {

@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import ListMovies from "../components/ListMovies";
 import Aside from "../components/Aside";
 import '../styles/app.css'
+import { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
 
 
 const HomePage = () => {
@@ -11,8 +13,10 @@ const HomePage = () => {
 
   const initialEndpoint = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`;
 
+  const {modeDark} = useContext(ThemeContext);
+
   return (
-    <div className="container">
+    <div className={modeDark ? 'container-dark' : 'container'}>
       <Header />
       <br />
       <div className="div-main-aside">

@@ -1,10 +1,17 @@
+import { useContext } from 'react';
+import ThemeContext from '../context/ThemeContext';
 import '../styles/aside.css';
 
+
 const Aside = () => {
+
+const {modeDark, setModeDark} = useContext(ThemeContext);
+
 	return (
 		<aside>
 			<section className="section-dark-mode">
-				Modo Noche
+				<label for="switchMode">Modo Noche</label>
+				<input type="checkbox" id='switchMode' value={modeDark} onChange={() => setModeDark(!modeDark)}/> 
 			</section>
 			<br />
 			<section>
