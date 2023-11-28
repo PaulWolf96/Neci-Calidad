@@ -6,16 +6,16 @@ import ApiContext from '../context/ApiContext';
 
 const Nav = () => {
 
-  const {dispatch} = useContext(ApiContext);
+  const {state, dispatch} = useContext(ApiContext);
 
   return (
     <nav>
       <ul>
         <li className="li-gender">
-          <a className="a-gender" href="#" onClick={() => dispatch({type: 'ACTION' })}>Accion</a>
+          <a className="a-gender" href={state.route} onClick={() => dispatch({type: 'ACTION' })}>Accion</a>
         </li>
         <li className="li-gender">
-          <a className="a-gender" href="#" onClick={() => dispatch({type: 'CRIME' })}>Crimen</a>
+          <a className="a-gender" href={state.route} onClick={() => dispatch({type: 'CRIME' })}>Crimen</a>
         </li>
         <li className="li-gender">
           <a className="a-gender" href="#" onClick={() => dispatch({type: 'COMEDY' })}>Comedia</a>

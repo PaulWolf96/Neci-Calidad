@@ -10,7 +10,6 @@ const initialState =  {
 } 
 
 const reducer = (state, action) => {
-  //const genres = [28, 80, 35, 878, 12, 16, 27, 53, 10749, 10751];
   switch (action.type) {
     case 'ACTION': 
       return (

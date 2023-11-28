@@ -1,6 +1,25 @@
 * {
   font-family: Verdana, sans-serif;
 }
+.div-logo-neci {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 0 30px;
+}
+
+.p-header {
+  font-size: 12px;
+  color: rgb(85, 83, 83);
+  width: 240px;
+  font-family: Verdana, sans-serif;
+}
+.a-header {
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #11a193;
+}
 
 ul {
   display: inline-flex;
@@ -26,7 +45,7 @@ ul {
   margin-left: 20px;
 }
 
-.div-header {
+.div-nav {
   display: flex;
   justify-content: space-between;
 }

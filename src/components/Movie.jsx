@@ -57,7 +57,7 @@ const Movie = () => {
           <br />
           <span>
             <strong>Titulos:</strong>
-            {infoMovie.original_title}
+            {infoMovie.title}
           </span>
           <span>
             <strong>TMDB:</strong>
