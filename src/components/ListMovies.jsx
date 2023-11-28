@@ -1,16 +1,28 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import '../styles/listMovies.css';
 import ApiContext from "../context/ApiContext";
 import MovieContext from "../context/MovieContext";
 
 
 
-const ListMovies = () => {
+const ListMovies = ({ endpoint }) => {
 
-  const {listMovies, fetchData} = useContext(ApiContext);
+  const {listMovies, setListMovies} = useContext(ApiContext);
   const {selectMovie} = useContext(MovieContext);
+  
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(endpoint);
+      const data = await response.json();
+      await setListMovies(data.results);
+    } catch (error) {
+      console.error('Error fetching data: ', error);
+    }
+  };
 
   fetchData();
+  
 
   return (
     <main>
