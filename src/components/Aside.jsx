@@ -11,7 +11,7 @@ const {modeDark, setModeDark} = useContext(ThemeContext);
 		<aside>
 			<section className="section-dark-mode">
 				<label for="switchMode">Modo Noche</label>
-				<input type="checkbox" id='switchMode' value={modeDark} onChange={() => setModeDark(!modeDark)}/> 
+				<input type="checkbox" id='switchMode' checked={modeDark} onChange={() => setModeDark(!modeDark)}/> 
 			</section>
 			<br />
 			<section>
