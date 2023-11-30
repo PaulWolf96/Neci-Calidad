@@ -4,9 +4,11 @@ import LogoWp from '../img/whatsappLogo.png';
 import { BsFillShareFill } from 'react-icons/bs';
 import { useContext, useEffect, useState } from 'react';
 import MovieContext from '../context/MovieContext';
+import ThemeContext from '../context/ThemeContext';
 
 const Movie = () => {
 
+  const {modeDark} = useContext(ThemeContext);
   const {infoMovie} = useContext(MovieContext);
   const [castMovie, setCastMovie] = useState({
     director: '',
@@ -85,7 +87,7 @@ const Movie = () => {
           <br />
           <div className='div-share-movie'>
             <div className='div-share-icon'>
-              <button className='button-share'>
+              <button className={modeDark ? 'button-share-dark': 'button-share'}>
                 <BsFillShareFill style={{marginRight: "15px"}}/>
                 <span>Compartir</span>
               </button>

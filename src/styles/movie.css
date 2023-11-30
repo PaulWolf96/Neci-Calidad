@@ -84,7 +84,20 @@ strong {
   color: grey;
 }
 
+.button-share-dark {
+  display: inline-flex;
+  align-items: center;
+  border: none; 
+  background-color: rgb(63, 55, 55);
+  color: white;
+}
+
 .button-share:hover {
+  cursor: pointer;
+  color: #0ecbb7;
+}
+
+.button-share-dark:hover {
   cursor: pointer;
   color: #0ecbb7;
 }

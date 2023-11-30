@@ -5,15 +5,12 @@
   font-family: Verdana, sans-serif;
 }
 
-
 .container {
-  width: 77%;
-  margin: 0 auto;
+  padding: 0 10rem;
 }
 
 .container-dark {
-  width: 77%;
-  margin: 0 auto;
+  padding: 0 10rem;
   background-color: rgb(63, 55, 55);
   color: white;
 }
