@@ -1,8 +1,15 @@
+import { useContext } from 'react';
 import '../styles/header.css';
 import { HiMenu } from 'react-icons/hi';
+import MovieContext from '../context/MovieContext';
 
 
 const Nav = () => {
+
+  const {query, setQuery} = useContext(MovieContext);
+
+  
+
   return (
     <nav>
       <ul>
@@ -39,7 +46,7 @@ const Nav = () => {
       </ul>
       <button className='button-menu'><HiMenu />Menú</button>
       <div className='div-input'>
-        <input type="text" placeholder="Buscar..." />
+        <input type="text" placeholder="Buscar..." value={query} onChange={(e) => setQuery(e.target.value)} />
         <br />
       </div>
     </nav>

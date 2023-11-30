@@ -7,7 +7,10 @@ const MovieContext = createContext();
 
 
 export const MovieProvider = ({children}) => {
+  const [listMovies, setListMovies] = useState([]);
   const [infoMovie, setInfoMovie] = useState(JSON.parse(localStorage.getItem('infoMovie')));
+  const [query, setQuery] = useState('');
+  const [listMoviesSearch, setListMoviesSearch] = useState([]);
   const navigate = useNavigate();
 
 
@@ -23,10 +26,12 @@ export const MovieProvider = ({children}) => {
     localStorage.setItem('infoMovie', JSON.stringify(selectedMovie));
     navigate('/movie');
   }
+
+
   
 
   return (
-    <MovieContext.Provider value={{infoMovie, selectMovie}}>
+    <MovieContext.Provider value={{listMovies, setListMovies, selectMovie, infoMovie, query, setQuery, listMoviesSearch, setListMoviesSearch}}>
       {children}
     </MovieContext.Provider>
   )

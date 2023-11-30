@@ -5,6 +5,8 @@ import Aside from "../components/Aside";
 import '../styles/app.css'
 import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
+import MovieContext from "../context/MovieContext";
+import ListSearchMovie from "../components/ListSearchMovie";
 
 
 const HomePage = () => {
@@ -14,13 +16,14 @@ const HomePage = () => {
   const initialEndpoint = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`;
 
   const {modeDark} = useContext(ThemeContext);
+  const {query} = useContext(MovieContext);
 
   return (
     <div className={modeDark ? 'container-dark' : 'container'}>
       <Header />
       <br />
       <div className="div-main-aside">
-        <ListMovies endpoint={initialEndpoint}/>
+        {query ? <ListSearchMovie /> : <ListMovies endpoint={initialEndpoint}/> }
         <br />
         <Aside />
       </div>

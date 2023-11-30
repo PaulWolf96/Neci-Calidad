@@ -3,6 +3,7 @@ import HomePage from "../pages/HomePage";
 import MoviePage from "../pages/MoviePage";
 import GenrePage from "../pages/GenrePage";
 
+
 const API_KEY = '52a625a829f55a42813acab1b8e140d2';
 const endpointAction = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=28`;
 const endpointCrime = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=80`;
