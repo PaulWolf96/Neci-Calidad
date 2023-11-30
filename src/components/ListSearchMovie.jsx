@@ -6,22 +6,22 @@ const ListSearchMovie = () => {
 
   const API_KEY = '52a625a829f55a42813acab1b8e140d2';
 
-  const fetchdataSearch = async () => {
-    try {
-      const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`);
-      if (!response.ok) {
-        throw new Error('Error al realizar la búsqueda');
-      }
-      const data = await response.json();
-      setListMoviesSearch(data.results);
-    } catch (error) {
-      console.error('Error fetching data: ', error);
-    }
-  }
-
   useEffect(() => {
+    const fetchdataSearch = async () => {
+      try {
+        const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`);
+        if (!response.ok) {
+          throw new Error('Error al realizar la búsqueda');
+        }
+        const data = await response.json();
+        setListMoviesSearch(data.results);
+      } catch (error) {
+        console.error('Error fetching data: ', error);
+      }
+    }
+
     fetchdataSearch();
-  }, [query])
+  }, [query, setListMoviesSearch])
 
   return (
     <main>
@@ -31,7 +31,8 @@ const ListSearchMovie = () => {
             <img 
               src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} 
               onClick={(e) => selectMovie(e, movie)}
-              alt={movie.title} />
+              alt={movie.title} 
+              title={movie.title} />
           </div>
         )}
       </div>
