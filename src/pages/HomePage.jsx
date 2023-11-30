@@ -23,7 +23,7 @@ const HomePage = () => {
       <Header />
       <br />
       <div className="div-main-aside">
-        {query ? <ListSearchMovie /> : <ListMovies endpoint={initialEndpoint}/> }
+        { query ? <ListSearchMovie /> : <ListMovies endpoint={initialEndpoint} /> }
         <br />
         <Aside />
       </div>

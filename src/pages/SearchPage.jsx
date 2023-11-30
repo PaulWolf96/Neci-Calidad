@@ -1,24 +1,21 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import ListMovies from "../components/ListMovies";
 import Aside from "../components/Aside";
 import '../styles/app.css'
 import { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
-import MovieContext from "../context/MovieContext";
 import ListSearchMovie from "../components/ListSearchMovie";
 
-const GenrePage = ({ endpoint }) => {
+const SearchPage = () => {
 
   const {modeDark} = useContext(ThemeContext);
-  const {query} = useContext(MovieContext);
 
   return (
     <div className={modeDark ? 'container-dark' : 'container'}>
       <Header />
       <br />
       <div className="div-main-aside">
-      { query ? <ListSearchMovie /> : <ListMovies endpoint={endpoint} /> }
+        <ListSearchMovie />
         <br />
         <Aside />
       </div>
@@ -28,4 +25,4 @@ const GenrePage = ({ endpoint }) => {
   );
 }
 
-export default GenrePage;
+export default SearchPage;
