@@ -3,7 +3,7 @@ import './styles/app.css';
 
 function App() {
   return (
-        <AppRoutes />
+    <AppRoutes />
   );
 }
 
