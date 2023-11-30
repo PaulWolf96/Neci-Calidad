@@ -2,7 +2,7 @@ import '../styles/movie.css';
 import LogoInstagram from '../img/instagramLogo.png';
 import LogoWp from '../img/whatsappLogo.png';
 import { BsFillShareFill } from 'react-icons/bs';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import MovieContext from '../context/MovieContext';
 import ThemeContext from '../context/ThemeContext';
 
@@ -17,7 +17,7 @@ const Movie = () => {
   const [genres, setGenres] = useState();
 
 
-  useEffect(() => {
+  
     const fetchData = async () => {
       try {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${infoMovie.id}/credits?api_key=52a625a829f55a42813acab1b8e140d2`);
@@ -38,7 +38,7 @@ const Movie = () => {
     };
 
     fetchData();
-  }, [])
+  
 
 
   return (
@@ -93,8 +93,8 @@ const Movie = () => {
               </button>
             </div>
             <div className='div-share-logos'>
-              <a href=""><img src={LogoInstagram} alt="logo instagram" width="37px" /></a>
-              <a href=""><img src={LogoWp} alt="logo whatsapp" width="37px" /></a>
+              <a href="/"><img src={LogoInstagram} alt="logo instagram" width="37px" /></a>
+              <a href="/"><img src={LogoWp} alt="logo whatsapp" width="37px" /></a>
             </div>
           </div>
         </section>

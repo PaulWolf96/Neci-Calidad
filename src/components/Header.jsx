@@ -16,7 +16,7 @@ const Header = () => {
 					Audio latino e inglés online. <br />
 					1 enlace, 1 clic.</p>
 					<a href="/"><img className='logo-neci' src={modeDark ? LogoNeciDark : LogoNeci } width='158px' alt="Logo Neci Calidad" /></a>
-				<a href="" className='a-header'>Ir a Cinecalidad España</a>
+				<a href="/" className='a-header'>Ir a Cinecalidad España</a>
 			</div>
 			<div className='div-nav'>
 				<Nav />
