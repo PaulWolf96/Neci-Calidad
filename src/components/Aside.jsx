@@ -4,8 +4,7 @@ import '../styles/aside.css';
 
 
 const Aside = () => {
-
-const {modeDark, setModeDark} = useContext(ThemeContext);
+	const {modeDark, setModeDark} = useContext(ThemeContext);
 
 	return (
 		<aside>

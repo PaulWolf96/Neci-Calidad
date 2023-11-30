@@ -23,6 +23,9 @@ const HomePage = () => {
       <Header />
       <br />
       <div className="div-main-aside">
+        {/* Si la variable de estado "query" tiene contenido renderiza 
+        el componente que muestra las peliculas encontradas sino renderiza 
+        el componente inicial (que contiene las peliculas mas recientes ) */}
         { query ? <ListSearchMovie /> : <ListMovies endpoint={initialEndpoint} /> }
         <br />
         <Aside />

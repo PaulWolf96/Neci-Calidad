@@ -5,10 +5,8 @@ import MovieContext from '../context/MovieContext';
 
 
 const Nav = () => {
-
+  //Variables de estado traidas del contexto (guarda lo que tipea el usuario en el inputSearch)
   const {query, setQuery} = useContext(MovieContext);
-
-  
 
   return (
     <nav>

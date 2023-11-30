@@ -7,6 +7,7 @@ import ThemeContext from '../context/ThemeContext';
 
 const Header = () => {
 
+	//Variable de estado traida del contexto (guarda el booleano que maneja el modo noche)
 	const {modeDark} = useContext(ThemeContext);
 
 	return (
